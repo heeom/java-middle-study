@@ -18,6 +18,11 @@ public class MyArrayListV1 {
     }
 
     public void add(Object o) {
+        if (size == elems.length) {
+            Object [] newElems = new Object[elems.length * 2];
+            System.arraycopy(elems, 0, newElems, 0, size);
+            elems = newElems;
+        }
         elems[size] = o;
         size++;
     }
