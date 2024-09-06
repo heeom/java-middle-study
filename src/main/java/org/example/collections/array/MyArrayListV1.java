@@ -25,6 +25,21 @@ public class MyArrayListV1 {
         size++;
     }
 
+    public void add(int index, Object o) {
+        if (size == elems.length) {
+            elems = Arrays.copyOf(elems, elems.length * 2); // 길이 두배로 늘림
+        }
+        shiftRightFrom(index);
+        elems[index] = o;
+        size++;
+    }
+
+    private void shiftRightFrom(int index) {
+        for (int i = size; i > index; i--) {
+            elems[i] = elems[i-1];
+        }
+    }
+
     public Object get(int index) {
         return elems[index];
     }
