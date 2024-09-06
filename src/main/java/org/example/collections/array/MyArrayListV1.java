@@ -2,7 +2,7 @@ package org.example.collections.array;
 
 import java.util.Arrays;
 
-public class MyArrayListV1 {
+public class MyArrayListV1<E> {
     private static final int DEFAULT_CAPACITY = 5;
 
     private Object[] elems;
@@ -17,7 +17,7 @@ public class MyArrayListV1 {
         this.size = initialCapacity;
     }
 
-    public void add(Object o) {
+    public void add(E o) {
         if (size == elems.length) {
             elems = Arrays.copyOf(elems, elems.length * 2); // 길이 두배로 늘림
         }
@@ -25,7 +25,7 @@ public class MyArrayListV1 {
         size++;
     }
 
-    public void add(int index, Object o) {
+    public void add(int index, E o) {
         if (size == elems.length) {
             elems = Arrays.copyOf(elems, elems.length * 2); // 길이 두배로 늘림
         }
@@ -53,17 +53,17 @@ public class MyArrayListV1 {
         }
     }
 
-    public Object get(int index) {
-        return elems[index];
+    public E get(int index) {
+        return (E) elems[index];
     }
 
-    public Object set(int index, Object elem) {
-        Object oldValue = this.get(index);
+    public E set(int index, E elem) {
+        E oldValue = this.get(index);
         elems[index] = elem;
         return oldValue;
     }
 
-    public int indexOf(Object o) {
+    public int indexOf(E o) {
         for (int i = 0; i < size; i++) {
             if (o.equals(elems[i])) {
                 return i;
