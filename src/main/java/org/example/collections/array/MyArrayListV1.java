@@ -39,6 +39,19 @@ public class MyArrayListV1 {
             elems[i] = elems[i-1];
         }
     }
+    
+    public Object remove(int index) {
+        Object o = get(index);
+        shiftLeftFrom(index);
+        size--;
+        return o;
+    }
+
+    private void shiftLeftFrom(int index) {
+        for (int i = index; i < size; i++) {
+            elems[i] = elems[i+1];
+        }
+    }
 
     public Object get(int index) {
         return elems[index];
