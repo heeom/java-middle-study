@@ -7,12 +7,4 @@ public class Node {
     public Node(Object item) {
         this.item = item;
     }
-
-    public void setNext(Node next) {
-        this.next = next;
-    }
-
-    public Node getNext() {
-        return next;
-    }
 }
