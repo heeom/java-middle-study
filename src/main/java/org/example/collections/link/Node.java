@@ -1,4 +1,4 @@
-package org.example.collections.array;
+package org.example.collections.link;
 
 public class Node {
     Object item;
