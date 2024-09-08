@@ -8,7 +8,7 @@ public class NodeMain {
         first.next.next = new Node("C");
 
         Node node = first;
-        while(node.next != null) {
+        while(node != null) {
             System.out.println(node.item);
             node = node.next;
         }
