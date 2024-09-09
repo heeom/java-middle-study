@@ -43,6 +43,19 @@ public class MyLinkedList {
         return item;
     }
 
+    public Object remove(int idx) {
+        Node removeNode = getNode(idx);
+        Object removedItem = removeNode.item;
+        if (idx == 0) {
+            root = removeNode.next;
+        } else {
+            Node prev = getNode(idx - 1);
+            prev.next = removeNode.next;
+        }
+        size--;
+        return removedItem;
+    }
+
     public Node getNode(int idx) {
         Node node = root;
         for (int i = 0; i < idx; i++) {
