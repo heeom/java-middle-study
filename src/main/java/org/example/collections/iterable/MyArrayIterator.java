@@ -18,7 +18,6 @@ public class MyArrayIterator implements Iterator<Integer> {
 
     @Override
     public Integer next() {
-        currentIndex++;
-        return targetArr[currentIndex];
+        return targetArr[++currentIndex];
     }
 }
