@@ -14,5 +14,8 @@ public class SortMain3 {
         System.out.println("===========sorted");
         Arrays.sort(users);
         System.out.println(Arrays.toString(users));
+
+        Arrays.sort(users, new IdComparator());
+        System.out.println(Arrays.toString(users));
     }
 }
