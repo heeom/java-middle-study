@@ -25,4 +25,9 @@ public class Card implements Comparable<Card> {
         }
         return this.number - card.number;
     }
+
+    @Override
+    public String toString() {
+        return  number + '(' + suits.getIcon() + ')';
+    }
 }
