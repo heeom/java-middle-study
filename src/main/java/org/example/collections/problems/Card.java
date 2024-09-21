@@ -28,6 +28,6 @@ public class Card implements Comparable<Card> {
 
     @Override
     public String toString() {
-        return  number + '(' + suits.getIcon() + ')';
+        return  number + "(" + suits.getIcon() + ")";
     }
 }
