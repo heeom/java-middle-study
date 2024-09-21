@@ -1,6 +1,6 @@
 package org.example.collections.problems;
 
-public class Card {
+public class Card implements Comparable<Card> {
 
     private Suits suits;
     private Integer number;
@@ -16,5 +16,13 @@ public class Card {
 
     public Integer getNumber() {
         return number;
+    }
+
+    @Override
+    public int compareTo(Card card) {
+        if (this.number.equals(card.number)) {
+            return card.suits.getPriority() - this.suits.getPriority();
+        }
+        return this.number - card.number;
     }
 }
